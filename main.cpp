@@ -16,7 +16,6 @@ long double cosx(long double x, long double eps)
     int mn = 2;
     do{
         frac = (pow(x,mn))/(factorial(mn));
-        cout << frac*zn << " "; 
         mn += 2;
         res = res + zn*frac;
         zn *= -1;     
