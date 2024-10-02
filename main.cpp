@@ -11,15 +11,17 @@ long long int factorial(int i)
 long double cosx(long double x, long double eps)
 {
     long double res = 1;
-    long double frac;
+    long double frac = 1;
     int zn = -1;
     int mn = 2;
+    long double frac1 = 1;
     do{
-        frac = (pow(x,mn))/(factorial(mn));
+        frac = frac*x*x;
+        frac1 = frac/factorial(mn);
         mn += 2;
-        res = res + zn*frac;
+        res = res + zn*frac1;
         zn *= -1;     
-    }while(frac > eps);
+    }while(frac1 > eps);
     return res;
 }
 int main(){
